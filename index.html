@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Анимированный таймер</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="timer-wrapper">
+      <div class="timer-circle">
+        <svg width="220" height="220" viewBox="0 0 220 220">
+          <circle
+            cx="110"
+            cy="110"
+            r="90"
+            fill="none"
+            stroke="#e6e6e6"
+            stroke-width="14"
+          />
+          <circle
+            id="progressRing"
+            class="progress-ring"
+            cx="110"
+            cy="110"
+            r="90"
+            fill="none"
+            stroke="#3498db"
+            stroke-width="14"
+            stroke-linecap="round"
+            transform="rotate(-90 110 110)"
+          />
+        </svg>
+
+        <div
+          id="timeDisplay"
+          class="timer-time"
+          role="timer"
+          aria-live="polite"
+        >
+          00:00
+        </div>
+        <span
+          id="statusDot"
+          class="timer-status-dot"
+          title="Идёт отсчёт"
+        ></span>
+      </div>
+
+      <div class="timer-controls">
+        <label class="timer-label">
+          Минуты (1–99)
+          <input
+            id="minutesInput"
+            class="timer-input"
+            type="number"
+            min="1"
+            max="99"
+            value="5"
+            step="1"
+          />
+        </label>
+
+        <button id="startBtn" class="timer-btn primary">Старт</button>
+        <button id="pauseBtn" class="timer-btn" hidden>Пауза</button>
+        <button id="resetBtn" class="timer-btn ghost" disabled>Сброс</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
